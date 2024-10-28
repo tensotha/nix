@@ -13,7 +13,7 @@ return {
 			require("helpers.keys").map(
 				{ "n", "v" },
 				"<leader>e",
-				"<cmd>Neotree toggle<cr>",
+				"<cmd>Neotree position=current<cr>",
 				"Toggle file explorer"
 			)
 		end,
