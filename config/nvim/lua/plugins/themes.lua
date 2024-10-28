@@ -7,7 +7,7 @@ return {
         lazy = false,
         priority = 1000,
         opts = {},
-    }
+    },
 	"typicode/bg.nvim",
 
 	"ellisonleao/gruvbox.nvim",
