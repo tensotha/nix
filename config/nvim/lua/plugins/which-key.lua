@@ -9,8 +9,8 @@ return {
 					["<leader>"] = {
 						f = { name = "File" },
 						d = { name = "Delete/Close" },
-                        sg = { name = "live grep (search file contents)"}
-                        sf = { name = "search file names" }
+                        sg = { name = "live grep (search file contents)"},
+                        sf = { name = "search file names" },
 						q = { name = "Quit" },
 						s = { name = "Search" },
 						l = { name = "LSP" },
