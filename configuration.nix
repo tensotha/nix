@@ -6,6 +6,14 @@
 { config, lib, pkgs, ... }:
 
 {
+fonts.packages = with pkgs; [
+      jetbrains-mono
+      fira-code
+      fira-code-symbols
+];
+fonts.fonts = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
   imports =
@@ -24,7 +32,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   #
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-
+  services.blueman.enable = true;
   # Set your time zone.
   #
   time.timeZone = "Europe/Amsterdam";
@@ -37,7 +45,7 @@
     dates = "daily";
     options = "--delete-older-than 1d";
   };
-
+  services.flatpak.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -100,6 +108,7 @@ hardware = {
     pkgs.python3
     pkgs.gcc
     pkgs.rofi-wayland
+    pkgs.swww
   ];
 }
 
