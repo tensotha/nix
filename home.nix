@@ -2,7 +2,7 @@
 
 {
   xdg.configFile.nvim = {
-    source = "./nvim";
+    source = ./nvim;
     recursive = true;
   };
   home.username = "tensotha";
