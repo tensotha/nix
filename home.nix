@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  xdg.configFile.nvim = {
+    source = "./nvim";
+    recursive = true;
+  };
   home.username = "tensotha";
   home.homeDirectory = "/home/tensotha";
 
@@ -97,12 +101,7 @@
     vimAlias = true;
     vimdiffAlias = true;
     defaultEditor = true;
-    extraLuaConfig = 
-    ''
-    ${builtins.readFile ./config/nvim/init.lua}
-    '';
   };
-
   programs.git = {
     enable = true;
     userName = "tensotha";
