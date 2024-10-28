@@ -96,8 +96,10 @@ hardware = {
 
   environment.systemPackages = [
     pkgs.neovim
+    pkgs.dunst
     pkgs.python3
     pkgs.gcc
+    pkgs.rofi-wayland
   ];
 }
 
