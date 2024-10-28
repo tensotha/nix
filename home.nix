@@ -1,10 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  xdg.configFile.nvim = {
-    source = ./nvim;
-    recursive = true;
-  };
   home.username = "tensotha";
   home.homeDirectory = "/home/tensotha";
 
@@ -102,6 +98,11 @@
     vimdiffAlias = true;
     defaultEditor = true;
   };
+  xdg.configFile.nvim = {
+    source = ./config/nvim;
+    recursive = true;
+  };
+
   programs.git = {
     enable = true;
     userName = "tensotha";
