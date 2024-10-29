@@ -103,6 +103,17 @@
     recursive = true;
   };
 
+xdg.configFile.waybar = {
+    source = ./config/waybar;
+    recursive = true;
+};
+
+xdg.configFile.hyprland = {
+    source = ./config/hypr;
+    recursive = true;
+};
+
+
   programs.git = {
     enable = true;
     userName = "tensotha";
