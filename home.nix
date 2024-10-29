@@ -30,6 +30,7 @@
     firefox
     kitty
 
+    vesktop
     # archives
     zip
     xz
