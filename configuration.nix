@@ -10,9 +10,8 @@ fonts.packages = with pkgs; [
       jetbrains-mono
       fira-code
       fira-code-symbols
-];
-fonts.fonts = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+
 ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
@@ -65,7 +64,7 @@ fonts.fonts = with pkgs; [
 
 
 hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
     nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
     nvidia.modesetting.enable = true;
 };
