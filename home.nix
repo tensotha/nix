@@ -25,7 +25,7 @@
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
     vscodium
-
+    hyprcursor
     neofetch
     firefox
     kitty
@@ -108,7 +108,7 @@ xdg.configFile.waybar = {
     recursive = true;
 };
 
-xdg.configFile.hyprland = {
+xdg.configFile.hypr = {
     source = ./config/hypr;
     recursive = true;
 };
