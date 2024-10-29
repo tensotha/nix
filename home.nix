@@ -103,9 +103,6 @@ programs.tmux = {
      tmuxPlugins.yank
   ];
   extraConfig = ''
-    ...
-    set -g status-right '#[fg=black,bg=color15] #{cpu_percentage}  %H:%M '
-    run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
     set -g default-terminal "screen-256color"
     set -g prefix C-a
     unbind C-b
@@ -156,7 +153,6 @@ programs.tmux = {
     # set -g @plugin 'github_username/plugin_name#branch'
     # set -g @plugin 'git@github.com:user/plugin'
     # set -g @plugin 'git@bitbucket.com:user/plugin'
-    run-shell ${pkgs.tmuxPlugins.cpu}/share/tmux-plugins/cpu/cpu.tmux
     set -g @plugin 'catppuccin/tmux'
     set -g status-position top
 
