@@ -10,12 +10,8 @@ return {
 		},
 		config = function()
 			require("neo-tree").setup()
-			require("helpers.keys").map(
-				{ "n", "v" },
-				"<leader>e",
-				"<cmd>Neotree position=current<cr>",
-				"Toggle file explorer"
-			)
+			vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
 		end,
+		
 	},
 }

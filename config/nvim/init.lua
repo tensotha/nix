@@ -1,8 +1,7 @@
--- Handle plugins with lazy.nvim
-require("core.lazy")
+vim.g.mapleader = " "
 
--- General Neovim keymaps
-require("core.keymaps")
 
--- Other options
 require("core.options")
+
+
+require("core.lazy")

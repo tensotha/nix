@@ -7,7 +7,7 @@ return {
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = lualine_theme,
+				theme = 'dracula',
 				component_separators = "|",
 				section_separators = "",
 			},
