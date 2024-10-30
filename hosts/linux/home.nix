@@ -11,7 +11,7 @@
     # Uncomment if you are using the nix-darwin module
     #inputs.nixvim.nixDarwinModules.nixvim
 
-    # ../../home-manager/common/nvim/nvim.nix
+    ../../home-manager/common/nvim/nvim.nix
     ../../home-manager/common/tmux/tmux.nix
 
     ];
@@ -30,7 +30,7 @@ home-manager.users.tensotha = { pkgs, ... }: {
     neofetch
     firefox
     kitty
-
+    git
     vesktop
     # archives
     zip

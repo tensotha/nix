@@ -1,3 +1,5 @@
+{ config, lib, pkgs, ... }:
+
 {
   programs.nixvim = {
       imports = [
