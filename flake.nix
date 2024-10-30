@@ -14,8 +14,8 @@
   };
 
   outputs = inputs@{ nixpkgs, home-manager, nixvim,  darwin, ... }: {
-          systems = [ "x86_64-linux" "aarch64-darwin"];
-       darwinConfigurations = {
+    systems = [ "x86_64-linux" "aarch64-darwin"];
+    darwinConfigurations = {
       tensotha = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
@@ -29,7 +29,7 @@
         ];
       };
     };
-        nixosConfigurations.tensotha-nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.tensotha-nixos = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
       system = "x86_64-linux";
       modules = [

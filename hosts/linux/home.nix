@@ -1,6 +1,20 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    # NOTE: The first thing you will want to do is uncommented on of the three imports below
+    # depending on which module you chose to use to install Nixvim.
+    #
+    # Uncomment if you are using the home-manager module
+    #inputs.nixvim.homeManagerModules.nixvim
+    # Uncomment if you are using the nixos module
+    #inputs.nixvim.nixosModules.nixvim
+    # Uncomment if you are using the nix-darwin module
+    #inputs.nixvim.nixDarwinModules.nixvim
+
+    ../../home-manager/common/nvim/nvim.nix
+
+    ];
   home.username = "tensotha";
   home.homeDirectory = "/home/tensotha";
 
@@ -160,18 +174,6 @@ programs.tmux = {
 
   '';
 };
-
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
-    defaultEditor = true;
-  };
-  xdg.configFile.nvim = {
-    source = ./config/nvim;
-    recursive = true;
-  };
 
 xdg.configFile.waybar = {
     source = ./config/waybar;

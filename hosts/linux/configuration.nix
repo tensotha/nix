@@ -104,7 +104,6 @@ hardware = {
   system.stateVersion = "24.05"; # Did you read the comment?
 
   environment.systemPackages = [
-    pkgs.neovim
     pkgs.dunst
     pkgs.python3
     pkgs.gcc
