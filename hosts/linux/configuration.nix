@@ -39,7 +39,6 @@ fonts.packages = with pkgs; [
   time.timeZone = "Europe/Amsterdam";
 
 
-
   # Enable the X11 windowing system.
   nix.gc = {
     automatic = true;

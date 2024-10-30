@@ -35,7 +35,7 @@
       modules = [
        ./hosts/linux/configuration.nix 
        ./hosts/linux/home.nix
-        inputs.nixvim.nixDarwinModules.nixvim
+        inputs.nixvim.homeManagerModules.nixvim
 
       home-manager.nixosModules.home-manager
       {
