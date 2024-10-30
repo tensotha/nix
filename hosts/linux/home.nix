@@ -12,7 +12,7 @@
     #inputs.nixvim.nixDarwinModules.nixvim
 
     # ../../home-manager/common/nvim/nvim.nix
-    ../../home-manager/common/starship/starship.nix
+    ../../home-manager/common/tmux/tmux.nix
 
     ];
 
