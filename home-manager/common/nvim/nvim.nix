@@ -1,4 +1,4 @@
-
+{
   programs.nixvim = {
       imports = [
     # config for nvim
@@ -45,3 +45,4 @@
     };
 
   };
+}

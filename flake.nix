@@ -34,13 +34,13 @@
       system = "x86_64-linux";
       modules = [
        ./hosts/linux/configuration.nix 
-
+       ./hosts/linux/home.nix
+        inputs.nixvim.nixDarwinModules.nixvim
 
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.tensotha = import ./hosts/linux/home.nix;
        }
       ];
     };
