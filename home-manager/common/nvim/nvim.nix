@@ -1,7 +1,6 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.nixvim = {
       imports = [
     # config for nvim
     ./conform.nix
@@ -16,6 +15,8 @@
     ./lint.nix
     ./which-key.nix
     ];
+  programs.nixvim = {
+
      enable = true;
 
     # You can easily change to a different colorscheme.

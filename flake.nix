@@ -13,7 +13,14 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, nixvim,  darwin, ... }: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    nixvim,
+    darwin,
+    ...
+  } @ inputs: {
     systems = [ "x86_64-linux" "aarch64-darwin"];
     darwinConfigurations = {
       tensotha = darwin.lib.darwinSystem {
@@ -25,6 +32,7 @@
           home-manager.darwinModules.home-manager {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
         ];
       };
@@ -34,13 +42,13 @@
       system = "x86_64-linux";
       modules = [
        ./hosts/linux/configuration.nix 
-       ./hosts/linux/home.nix
-        inputs.nixvim.nixosModules.nixvim
-
+       
       home-manager.nixosModules.home-manager
       {
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = {inherit inputs;};
+        home-manager.users.tensotha = import ./hosts/linux/home.nix;
        }
       ];
     };

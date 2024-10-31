@@ -1,13 +1,29 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [];
+  imports = [
+    inputs.nixvim.homeManagerModules.nixvim
+    ../../home-manager/common/nvim/nvim.nix
+    ../../home-manager/common/tmux/tmux.nix
+  ];
 
-  users.users.tensotha = {
-  name = "tensotha";
-  home = "/home/tensotha";
+  home = {
+    username = "tensotha";
+    homeDirectory = "/home/tensotha";
 };
 
-home-manager.users.tensotha = { pkgs, ... }: {
+
+xdg.configFile.waybar = {
+    source = ../../home-manager/common/waybar;
+    recursive = true;
+};
+
+xdg.configFile.hypr = {
+    source = ../../home-manager/common/hypr;
+    recursive = true;
+};
+  programs.bash.enable = true;
+
+
  home.packages = with pkgs; [
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
@@ -78,16 +94,7 @@ home-manager.users.tensotha = { pkgs, ... }: {
     pciutils # lspci
     usbutils # lsusb
   ];
-xdg.configFile.waybar = {
-    source = ../../home-manager/common/waybar;
-    recursive = true;
-};
 
-xdg.configFile.hypr = {
-    source = ../../home-manager/common/hypr;
-    recursive = true;
-};
-  programs.bash.enable = true;
 
   # The state version is required and should stay at the version you
   # originally installed.
@@ -95,5 +102,4 @@ xdg.configFile.hypr = {
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-};
 }
