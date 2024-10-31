@@ -1,11 +1,16 @@
-{ pkgs, ...}: {
+{inputs, pkgs, ...}: {
   
  home.packages = with pkgs; [
     dunst
     rofi-wayland
     swww
 ];
-wayland.windowManager.hyprland.enable = true; # enable Hyprland
+wayland.windowManager.hyprland = { 
+	enable = true; # enable Hyprland
+            plugins = [
+      # ...
+    ];
+};
 programs.waybar.enable = true;
 programs.hyprlock.enable = true;
 xdg.configFile.waybar = {
