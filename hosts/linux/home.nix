@@ -1,20 +1,6 @@
 { config, pkgs, inputs, ... }:
 {
-  imports = [
-    # NOTE: The first thing you will want to do is uncommented on of the three imports below
-    # depending on which module you chose to use to install Nixvim.
-    #
-    # Uncomment if you are using the home-manager module
-    #inputs.nixvim.homeManagerModules.nixvim
-    # Uncomment if you are using the nixos module
-    inputs.nixvim.nixosModules.nixvim
-    # Uncomment if you are using the nix-darwin module
-    #inputs.nixvim.nixDarwinModules.nixvim
-
-#    ../../home-manager/common/nvim/nvim.nix
-#    ../../home-manager/common/tmux/tmux.nix
-
-    ];
+  imports = [];
 
   users.users.tensotha = {
   name = "tensotha";
@@ -93,12 +79,12 @@ home-manager.users.tensotha = { pkgs, ... }: {
     usbutils # lsusb
   ];
 xdg.configFile.waybar = {
-    source = ./config/waybar;
+    source = ../../home-manager/common/waybar;
     recursive = true;
 };
 
 xdg.configFile.hypr = {
-    source = ./config/hypr;
+    source = ../../home-manager/common/hypr;
     recursive = true;
 };
   programs.bash.enable = true;
