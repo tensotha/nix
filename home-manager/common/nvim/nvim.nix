@@ -1,7 +1,7 @@
-{ config, lib, pkgs, ... }:
-
+{inputs, ...}:
 {
-      imports = [
+  imports = [
+        inputs.nixvim.homeManagerModules.nixvim
     # config for nvim
     ./conform.nix
     ./cmp.nix
@@ -18,7 +18,9 @@
   programs.nixvim = {
 
      enable = true;
-
+     vimAlias = true;
+     vimdiffAlias = true;
+     defaultEditor = true;
     # You can easily change to a different colorscheme.
     # Add your colorscheme here and enable it.
     # Don't forget to disable the colorschemes you arent using
@@ -46,6 +48,5 @@
       # Set to true if you have a Nerd Font installed and selected in the terminal
       have_nerd_font = true;
     };
-
   };
 }
