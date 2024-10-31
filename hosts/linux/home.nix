@@ -11,14 +11,14 @@
     # Uncomment if you are using the nix-darwin module
     #inputs.nixvim.nixDarwinModules.nixvim
 
-    ../../home-manager/common/nvim/nvim.nix
-    ../../home-manager/common/tmux/tmux.nix
+#    ../../home-manager/common/nvim/nvim.nix
+#    ../../home-manager/common/tmux/tmux.nix
 
     ];
 
   users.users.tensotha = {
   name = "tensotha";
-  home = "/Users/tensotha";
+  home = "/home/tensotha";
 };
 
 home-manager.users.tensotha = { pkgs, ... }: {
