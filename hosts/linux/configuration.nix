@@ -103,11 +103,10 @@ hardware = {
   system.stateVersion = "24.05"; # Did you read the comment?
 
   environment.systemPackages = [
-    pkgs.dunst
+    
     pkgs.python3
     pkgs.gcc
-    pkgs.rofi-wayland
-    pkgs.swww
-  ];
+    
+     ];
 }
 
