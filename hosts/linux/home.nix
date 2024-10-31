@@ -4,21 +4,12 @@
     ../../home-manager/common/nvim/nvim.nix
     ../../home-manager/common/tmux/tmux.nix
     ../../home-manager/common/random-packages.nix
-  ];
+    ../../home-manager/linux/hypr/hyprland.nix 
+];
 
   home = {
     username = "tensotha";
     homeDirectory = "/home/tensotha";
-};
-
-xdg.configFile.waybar = {
-    source = ../../home-manager/common/waybar;
-    recursive = true;
-};
-
-xdg.configFile.hypr = {
-    source = ../../home-manager/common/hypr;
-    recursive = true;
 };
 
 
