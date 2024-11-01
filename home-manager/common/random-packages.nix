@@ -12,7 +12,11 @@ programs.bash = {
 	#	enable = true;
 	#        themeFile = "tokyo_night_moon";
 	#};
-  programs.yazi = {
+
+programs.starship = {
+		enable = true;
+	};
+programs.yazi = {
 		enable = true;
 		enableBashIntegration = true;
 
@@ -23,6 +27,8 @@ programs.bash = {
  home.packages = with pkgs; [
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
+    bat
+    fzf
     vscodium
     hyprcursor
     neofetch
@@ -40,7 +46,6 @@ programs.bash = {
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
-    fzf # A command-line fuzzy finder
 
     # networking tools
     mtr # A network diagnostic tool

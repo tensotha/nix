@@ -106,7 +106,7 @@ hardware = {
     
     pkgs.python3
     pkgs.gcc
-    
+    pkgs.caprine 
      ];
 }
 
