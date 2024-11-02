@@ -22,7 +22,7 @@
      vimdiffAlias = true;
      defaultEditor = true;
     # You can easily change to a different colorscheme.
-    # Add your colorscheme here and enable it.
+    # Add your colorscheme here and enab le it.
     # Don't forget to disable the colorschemes you arent using
     #
     # If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
@@ -36,15 +36,23 @@
           style = "night";
         };
       };
-    };
-
+		};
+    globalOpts = {
+	shiftwidth = 2;
+	tabstop = 2;
+	softtabstop = 2;
+	expandtab = true;
+	wrap = false;
+	termguicolors = true;
+	number = true;
+	relativenumber = true;
+	};	
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=globals#globals
     globals = {
       # Set <space> as the leader key
       # See `:help mapleader`
       mapleader = " ";
       maplocalleader = " ";
-
       # Set to true if you have a Nerd Font installed and selected in the terminal
       have_nerd_font = true;
     };

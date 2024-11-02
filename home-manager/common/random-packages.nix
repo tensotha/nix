@@ -2,6 +2,25 @@
 programs.bash = {
 		enable = true;
 		enableCompletion = true;
+		bashrcExtra = ''
+if command -v tmux>/dev/null; then
+ [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
+fi
+
+if [ "$(tty)" = "/dev/tty1" ];then
+  Hyprland
+fi
+		'';
+	          shellAliases = {
+          	ne = "nix-env";
+          	nei = "nix-env -iA";
+          	no = "nixops";
+          	ns = "nix-shell --pure";
+		k = "kubectl";
+		nors = "sudo nixos-rebuild switch";
+         	please = "sudo";
+		g = "git";
+          };
 	};
   programs.git = {
     enable = true;
@@ -12,7 +31,12 @@ programs.bash = {
 	#	enable = true;
 	#        themeFile = "tokyo_night_moon";
 	#};
-
+programs.direnv = {
+		enable = true;
+		enableBashIntegration = true;
+		enableZshIntegration = true;
+		nix-direnv.enable = true;
+	};
 programs.starship = {
 		enable = true;
 	};
@@ -34,6 +58,7 @@ programs.yazi = {
     kitty
     vesktop
     # archives
+    stremio
     zip
     xz
     unzip
@@ -44,7 +69,6 @@ programs.yazi = {
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
-    direnv
     # networking tools
     mtr # A network diagnostic tool
     iperf3
