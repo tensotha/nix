@@ -3,13 +3,14 @@ programs.bash = {
 		enable = true;
 		enableCompletion = true;
 		bashrcExtra = ''
+if [ "$(tty)" = "/dev/tty1" ];then
+  Hyprland
+fi
 if command -v tmux>/dev/null; then
  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
 fi
 
-if [ "$(tty)" = "/dev/tty1" ];then
-  Hyprland
-fi
+
 		'';
 	          shellAliases = {
           	ne = "nix-env";
