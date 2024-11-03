@@ -4,6 +4,7 @@
         inputs.nixvim.homeManagerModules.nixvim
     # config for nvim
     ./conform.nix
+    ./buflualines.nix
     ./cmp.nix
     ./debug.nix
     ./cmdline.nix
