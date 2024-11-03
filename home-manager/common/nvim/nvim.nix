@@ -9,6 +9,7 @@
     ./cmp.nix
     ./debug.nix
     ./cmdline.nix
+    ./markdown.nix
     ./telescope.nix
     ./treesitter.nix
     ./neotree.nix

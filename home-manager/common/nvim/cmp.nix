@@ -87,6 +87,7 @@
         # corresponding source plugins. This will work only when this option is set to a list.
         # If you use a raw lua string, you will need to explicitly enable the relevant source
         # plugins in your nixvim configuration.
+        autoEnableSources = true;
         sources = [
           # Snippet Engine & its associated nvim-cmp source
           # https://nix-community.github.io/nixvim/plugins/luasnip/index.html
@@ -103,6 +104,9 @@
           # https://nix-community.github.io/nixvim/plugins/cmp-path.html
           {
             name = "path";
+          }
+          {
+            name =  "buffer";
           }
         ];
       };
