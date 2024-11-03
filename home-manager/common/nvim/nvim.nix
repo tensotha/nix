@@ -6,6 +6,7 @@
     ./conform.nix
     ./cmp.nix
     ./debug.nix
+    ./cmdline.nix
     ./telescope.nix
     ./treesitter.nix
     ./neotree.nix
@@ -46,7 +47,93 @@
 	termguicolors = true;
 	number = true;
 	relativenumber = true;
-	};	
+	};
+  keymaps = [
+        {
+      mode = "n";
+      key = "<leader>sh";
+      action = "<C-W>s";
+      options = {
+        desc = "Split Window Horizontally";
+        remap = true;
+        };
+      }
+      {
+          mode = "n";
+          key = "<leader>sv";
+          action = "<C-W>v";
+          options = {
+            desc = "Split Window Vertically";
+            remap = true;
+          };
+      }
+      {
+          mode = "n";
+          key = "<leader>se";
+          action = "<C-W>=";
+          options = {
+            desc = "make windows equal size";
+            remap = true;
+        };
+      }
+      {
+          mode = "n";
+          key = "<leader>sx";
+          action = "<cmd>close<CR>";
+          options = {
+            desc = "close current split";
+            remap = true;
+        };
+      }
+       {
+          mode = "n";
+          key = "<leader>to";
+          action = "<cmd>tabnew<CR>";
+          options = {
+            desc = "Open New Tab";
+            remap = true;
+        };
+      }
+       {
+          mode = "n";
+          key = "<leader>tx";
+          action = "<cmd>tabclose<CR>";
+          options = {
+            desc = "Close Tab";
+            remap = true;
+        };
+      }
+{
+          mode = "n";
+          key = "<leader>tn";
+          action = "<cmd>tabn<CR>";
+          options = {
+            desc = "Go to Next Tab";
+            remap = true;
+        };
+      }
+ {
+          mode = "n";
+          key = "<leader>tp";
+          action = "<cmd>tabp<CR>";
+          options = {
+            desc = "Go to Previous Tab";
+            remap = true;
+        };
+      }
+{
+      mode = ["i" "x" "n" "s"];
+      key = "<leader>w";
+      action = "<cmd>w<cr><esc>";
+      options = {desc = "Save File";};
+    }
+          {
+      mode = ["i" "x" "n" "s"];
+      key = "<leader>wa";
+      action = "<cmd>wa<cr><esc>";
+      options = {desc = "Save All Files";};
+    }
+    ];
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=globals#globals
     globals = {
       # Set <space> as the leader key
