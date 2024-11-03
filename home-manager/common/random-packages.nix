@@ -66,6 +66,7 @@ programs.yazi = {
     p7zip
     copyq
     # utils
+    xdg-utils
     ripgrep # recursively searches directories for a regex pattern
     jq # A lightweight and flexible command-line JSON processor
     yq-go # yaml processor https://github.com/mikefarah/yq
