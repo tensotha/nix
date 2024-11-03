@@ -81,6 +81,7 @@ programs.yazi = {
     ipcalc  # it is a calculator for the IPv4/v6 addresses
     
     lazygit
+    ripgrep
     # misc
     cowsay
     file
