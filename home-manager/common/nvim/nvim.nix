@@ -3,6 +3,7 @@
   imports = [
         inputs.nixvim.homeManagerModules.nixvim
     # config for nvim
+    ./vim-tmux-navigator.nix
     ./conform.nix
     ./buflualines.nix
     ./cmp.nix
@@ -47,6 +48,15 @@
 	wrap = false;
 	termguicolors = true;
 	number = true;
+  ignorecase = true;
+  smartcase = true;
+  cursorline = true;
+  background = "dark";
+  signcolumn = "yes";
+  backspace = "indent,eol,start";
+  #clipboard = append=(unnamedplus);
+  splitright = true;
+  splitbelow = true;
 	relativenumber = true;
 	};
   keymaps = [
@@ -121,6 +131,15 @@
             desc = "Go to Previous Tab";
             remap = true;
         };
+      }
+      {
+        mode= "i";
+        key = "jk";
+        action = "<ESC>";
+        options = {
+            desc = "Exit insert mode";
+            remap = true;
+          };
       }
 {
       mode = ["i" "x" "n" "s"];
