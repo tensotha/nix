@@ -142,7 +142,7 @@
       mapleader = " ";
       maplocalleader = " ";
       # Set to true if you have a Nerd Font installed and selected in the terminal
-      have_nerd_font = true;
+			# have_nerd_font = true;
     };
   };
 }
