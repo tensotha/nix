@@ -27,7 +27,8 @@
           };
         };
       servers = {
-        ts_ls  =  {
+      nil_ls.enable = true; #nix  
+      ts_ls  =  {
           enable = true;
          filetypes = [
         "javascript"

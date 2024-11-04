@@ -11,6 +11,7 @@
     # Autocompletion
     # See `:help cmp`
     # https://nix-community.github.io/nixvim/plugins/cmp/index.html
+    plugins.luasnip.enable = true;
     plugins.cmp = {
       enable = true;
 
@@ -32,8 +33,10 @@
         #
         # No, but seriously, Please read `:help ins-completion`, it is really good!
         mapping = {
-          # Select the [n]ext item
+                             # Select the [n]ext item
           "<C-n>" = "cmp.mapping.select_next_item()";
+
+
           # Select the [p]revious item
           "<C-p>" = "cmp.mapping.select_prev_item()";
           # Scroll the documentation window [b]ack / [f]orward
@@ -42,7 +45,7 @@
           # Accept ([y]es) the completion.
           #  This will auto-import if your LSP supports it.
           #  This will expand snippets if the LSP sent a snippet.
-          "<C-y>" = "cmp.mapping.confirm { select = true }";
+          "<CR>" = "cmp.mapping.confirm { select = true }";
           # If you prefer more traditional completion keymaps,
           # you can uncomment the following lines.
           # "<CR>" = "cmp.mapping.confirm { select = true }";
@@ -75,6 +78,19 @@
                 luasnip.jump(-1)
               end
             end, { 'i', 's' })
+          '';
+          "<Tab>" = ''
+                             function(fallback)
+                 if cmp.visible() then
+                   cmp.select_next_item()
+                 elseif luasnip.expandable() then
+                   luasnip.expand()
+                 elseif luasnip.expand_or_jumpable() then
+                   luasnip.expand_or_jump()
+                 else
+                   fallback()
+                 end
+               end
           '';
 
           # For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:

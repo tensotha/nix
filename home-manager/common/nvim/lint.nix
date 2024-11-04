@@ -10,17 +10,17 @@
         nix = ["nix"];
         markdown = [
           "markdownlint"
-          #vale
+          "vale"
         ];
         #clojure = ["clj-kondo"];
-        #dockerfile = ["hadolint"];
+        dockerfile = ["hadolint"];
         #inko = ["inko"];
         #janet = ["janet"];
-        #json = ["jsonlint"];
-        #rst = ["vale"];
+        json = ["jsonlint"];
+        rst = ["vale"];
         #ruby = ["ruby"];
-        #terraform = ["tflint"];
-        #text = ["vale"];
+        terraform = ["tflint"];
+        text = ["vale"];
       };
 
       # Create autocommand which carries out the actual linting
