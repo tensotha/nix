@@ -3,7 +3,8 @@
  home.packages = with pkgs; [
     dunst
     rofi-wayland
-    swww
+    pywal
+    inputs.swww.packages.${pkgs.system}.swww
 ];
 wayland.windowManager.hyprland = { 
 	enable = true; # enable Hyprland
@@ -18,7 +19,6 @@ xdg.configFile.waybar = {
    source = ./waybar;
     recursive = true;
 };
-
 xdg.configFile.hypr = {
     source = ./hypr;
     recursive = true;
