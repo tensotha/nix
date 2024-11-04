@@ -7,8 +7,28 @@
     extraPackages = with pkgs; [
       # Used to format Lua code
       stylua
+      isort
+      black
+      prettierd
+      nixpkgs-fmt
     ];
 
+
+
+
+    ## set ansible.yaml files
+    extraPlugins = [
+      # Set ansible.yaml files
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "nvim-ansible";
+        src = pkgs.fetchFromGitHub {
+          owner = "mfussenegger";
+          repo = "nvim-ansible";
+          rev = "9c3b4a771b8c8d7b4f2171466464d978cb3846f7";
+          hash = "sha256-N1yOL77WpP66A2zrKxi7IOO5uRzAaeGa0Y/yWaIFiws=";
+        };
+      })
+    ];
     # Autoformat
     # https://nix-community.github.io/nixvim/plugins/conform-nvim.html
     plugins.conform-nvim = {
@@ -30,13 +50,24 @@
         formatters_by_ft = {
           lua = ["stylua"];
           # Conform can also run multiple formatters sequentially
-          # python = [ "isort "black" ];
+          python = [ "isort"  "black" ];
           #
+          terraform  =  ["tofu_fmt"];
+          tf  =  ["tofu_fmt"];
+           css = ["prettier"];
+            html = ["prettier"];
+            json = ["prettier"];
+            just = ["just"];
+            markdown = ["prettier"];
+            nix = ["alejandra"];
+                      yaml = ["yamlfmt"];
           # You can use a sublist to tell conform to run *until* a formatter
           # is found
-          # javascript = [ [ "prettierd" "prettier" ] ];
+          javascript = [ "prettierd" "prettier" ];
+          javascriptreact  =  ["prettierd" "prettier"];
+          go  =  ["golines"];
         };
-      };
+      }; 
     };
 
     # https://nix-community.github.io/nixvim/keymaps/index.html

@@ -16,7 +16,7 @@
             "<leader>k" = "goto_prev";
             "<leader>j" = "goto_next";
           };
-
+        
           lspBuf = {
             gd = "definition";
             gD = "references";
@@ -27,47 +27,75 @@
           };
         };
       servers = {
-        ts_ls.enable = true;
+        ts_ls  =  {
+          enable = true;
+         filetypes = [
+        "javascript"
+        "javascriptreact"
+        "typescript"
+        "typescriptreact"
+      ];
+
+      extraOptions = {
+        settings = {
+          javascript = {
+            inlayHints = {
+              includeInlayEnumMemberValueHints = true;
+              includeInlayFunctionLikeReturnTypeHints = true;
+              includeInlayFunctionParameterTypeHints = true;
+              includeInlayParameterNameHints = "all";
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true;
+              includeInlayPropertyDeclarationTypeHints = true;
+              includeInlayVariableTypeHints = true;
+            };
+          };
+          typescript = {
+            inlayHints = {
+              includeInlayEnumMemberValueHints = true;
+              includeInlayFunctionLikeReturnTypeHints = true;
+              includeInlayFunctionParameterTypeHints = true;
+              includeInlayParameterNameHints = "all";
+              includeInlayParameterNameHintsWhenArgumentMatchesName = true;
+              includeInlayPropertyDeclarationTypeHints = true;
+              includeInlayVariableTypeHints = true;
+            };
+          };
+        };
+      };
+        };
+         eslint.enable = true;
         lua_ls.enable = true;
         rust_analyzer = {
           enable = true;
           installRustc = true;
           installCargo = true;
         };
-        pylsp.enable = true;
-
+        pylsp = {
+          enable = true;
+                settings.plugins = {
+        black.enabled = true;
+        flake8.enabled = true;
+        isort.enabled = true;
+        jedi.enabled = true;
+        mccabe.enabled = true;
+        pycodestyle.enabled = true;
+        pydocstyle.enabled = true;
+        pyflakes.enabled = true;
+        pylint.enabled = true;
+        rope.enabled = true;
+        yapf.enabled = true;
       };
-    };
-    # Autoformat
-    # https://nix-community.github.io/nixvim/plugins/conform-nvim.html
-    plugins.conform-nvim = {
-      enable = true;
-      settings = {
-        notify_on_error = false;
-        format_on_save = ''
-          function(bufnr)
-            -- Disable "format_on_save lsp_fallback" for lanuages that don't
-            -- have a well standardized coding style. You can add additional
-            -- lanuages here or re-enable it for the disabled ones.
-            local disable_filetypes = { c = true, cpp = true }
-            return {
-              timeout_ms = 500,
-              lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype]
-            }
-          end
-        '';
-        formatters_by_ft = {
-          lua = ["stylua"];
-          # Conform can also run multiple formatters sequentially
-          # python = [ "isort "black" ];
-          #
-          # You can use a sublist to tell conform to run *until* a formatter
-          # is found
-          # javascript = [ [ "prettierd" "prettier" ] ];
         };
+        ansiblels.enable = true;
+        dockerls.enable = true;
+        helm_ls.enable  = true;
+        nginx_language_server.enable  = true;
+        terraformls.enable = true;
+
+        gopls.enable  =  true;
       };
     };
-
+   
     # https://nix-community.github.io/nixvim/keymaps/index.html
     keymaps = [
       {
@@ -80,6 +108,14 @@
         '';
         options = {
           desc = "[F]ormat buffer";
+        };
+      }
+        {
+          mode = "n";
+          key = "gd";
+          action  = "<cmd>lua vim.lsp.buf.definition()<CR>";
+          options =  {
+          desc = "Go to Definition";
         };
       }
     ];

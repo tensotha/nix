@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   programs.nixvim = {
     # Shows how to use the DAP plugin to debug your code.
     #
@@ -41,6 +41,7 @@
         # Add your own debuggers here
         dap-go = {
           enable = true;
+          delve.path  =  "${pkgs.delve}/bin/dlv";
         };
       };
     };
