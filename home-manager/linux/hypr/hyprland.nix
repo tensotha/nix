@@ -23,4 +23,13 @@ xdg.configFile.hypr = {
     source = ./hypr;
     recursive = true;
 };
+xdg.configFile.wallpaperchanger = {
+    source = ./hypr/wallpaper-changer.sh;
+    executable = true;
+};
+xdg.configFile.wallpapers = {
+    source = ./wallpapers;
+    recursive = true;
+};
+
 }

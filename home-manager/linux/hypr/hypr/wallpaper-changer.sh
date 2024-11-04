@@ -1,12 +1,7 @@
-#!/bin/bash 
 
 #### Change "~/Downloads/wallpapers/" to the folder/directory you keep you wallpaper images.
 
-wall=$(find ../wallpapers/ -type f -name "*.jpg" -o -name "*.png" -o -name "*.gif" | shuf -n 1)
-
-swww kill
-swww init
-
+wall=$(find ~/.config/wallpapers/ -name "*.jpg" -o -name "*.png" -o -name "*.gif" | shuf -n 1)
 # Picks background wallpaper
 swww img $wall
 
