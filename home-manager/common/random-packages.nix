@@ -21,6 +21,7 @@ fi
 		nors = "sudo nixos-rebuild switch";
          	please = "sudo";
 		g = "git";
+    drs = "darwin-rebuild switch"
           };
 	};
   programs.git = {
