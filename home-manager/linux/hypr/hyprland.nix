@@ -4,6 +4,7 @@
     dunst
     rofi-wayland
     pywal
+    waypaper
     inputs.swww.packages.${pkgs.system}.swww
 ];
 wayland.windowManager.hyprland = { 
@@ -12,6 +13,7 @@ wayland.windowManager.hyprland = {
       # ...
     ];
 };
+
 programs.waybar.enable = true;
 programs.hyprlock.enable = true;
 xdg.configFile.waybar = {

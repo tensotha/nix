@@ -33,7 +33,6 @@ fonts.packages = with pkgs; [
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
   # Set your time zone.
   #
   time.timeZone = "Europe/Amsterdam";
@@ -101,9 +100,9 @@ hardware = {
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
-
+  programs.hyprland.enable = true;
   environment.systemPackages = [
-    
+    pkgs.bluetuith
     pkgs.python3
     pkgs.gcc
     pkgs.caprine 
