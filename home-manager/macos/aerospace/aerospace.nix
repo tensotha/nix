@@ -2,7 +2,7 @@
 ## So this is just for config management
 
 { ... }: {
-  xdg.configFile.hypr = {
+  xdg.configFile.aerospace = {
     source = ./aerospace;
     recursive = true;
 };
