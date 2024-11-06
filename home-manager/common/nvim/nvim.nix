@@ -49,6 +49,7 @@
   cursorline = true;
   background = "dark";
   signcolumn = "yes";
+  clipboard="unnamedplus";
   backspace = "indent,eol,start";
   #clipboard = append=(unnamedplus);
   splitright = true;
@@ -137,18 +138,6 @@
             remap = true;
           };
       }
-{
-      mode = ["i" "x" "n" "s"];
-      key = "<leader>w";
-      action = "<cmd>w<cr><esc>";
-      options = {desc = "Save File";};
-    }
-          {
-      mode = ["i" "x" "n" "s"];
-      key = "<leader>wa";
-      action = "<cmd>wa<cr><esc>";
-      options = {desc = "Save All Files";};
-    }
     ];
     # https://nix-community.github.io/nixvim/NeovimOptions/index.html?highlight=globals#globals
     globals = {
