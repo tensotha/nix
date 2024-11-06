@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config,  ... }:
 {
 
 
@@ -20,7 +20,7 @@ home-manager.users.tensotha = { pkgs, ... }: {
     ../../home-manager/common/random-packages.nix
     ../../home-manager/common/nvim/nvim.nix
     ../../home-manager/common/tmux/tmux.nix
-    
+    ../../home-manager/macos/aerospace/aerospace.nix   
 
     ];
   home.packages = [];

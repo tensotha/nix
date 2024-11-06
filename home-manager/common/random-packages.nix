@@ -21,7 +21,6 @@ fi
 		nors = "sudo nixos-rebuild switch";
          	please = "sudo";
 		g = "git";
-    drs = "darwin-rebuild switch";
           };
 	};
   programs.git = {
@@ -59,7 +58,6 @@ programs.yazi = {
     # feel free to add your own or remove some of them
     bat
     fzf
-    vscodium
     neofetch
     vesktop
     # archives
@@ -95,7 +93,7 @@ programs.yazi = {
     gawk
     zstd
     gnupg
-
+    pywal
     # nix related
     #
     # it provides the command `nom` works just like `nix`
