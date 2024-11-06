@@ -3,7 +3,8 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 
-{ config, lib, pkgs, ... }:
+{ config, pkgs, ... }:
+ 
 
 {
 fonts.packages = with pkgs; [
@@ -105,7 +106,10 @@ hardware = {
     pkgs.bluetuith
     pkgs.python3
     pkgs.gcc
-    pkgs.caprine 
+    pkgs.caprine
+    pkgs.anki-bin
+    pkgs.copyq
+    pkgs.stremio
      ];
 }
 

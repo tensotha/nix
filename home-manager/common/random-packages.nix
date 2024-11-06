@@ -60,12 +60,10 @@ programs.yazi = {
     kitty
     vesktop
     # archives
-    stremio
     zip
     xz
     unzip
     p7zip
-    copyq
     # utils
     xdg-utils
     ripgrep # recursively searches directories for a regex pattern
