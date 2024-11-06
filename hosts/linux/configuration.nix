@@ -108,8 +108,7 @@ hardware = {
     pkgs.gcc
     pkgs.caprine
     pkgs.anki-bin
-    pkgs.copyq
     pkgs.stremio
-     ];
+    ];
 }
 

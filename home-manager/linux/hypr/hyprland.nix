@@ -5,6 +5,8 @@
     rofi-wayland
     pywal
     waypaper
+    wl-clipboard
+    cliphist
     inputs.swww.packages.${pkgs.system}.swww
 ];
 wayland.windowManager.hyprland = { 
