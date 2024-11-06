@@ -7,6 +7,10 @@
     waypaper
     wl-clipboard
     cliphist
+    hypridle
+    hyprlock
+    hyprpicker
+    hyprshot
     inputs.swww.packages.${pkgs.system}.swww
 ];
 wayland.windowManager.hyprland = { 

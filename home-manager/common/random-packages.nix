@@ -29,16 +29,14 @@ fi
     userName  = "abdulhakim alsharif";
     userEmail = "abdulhakim.alsharif@hotmail.com";
   };
-	programs.kitty = lib.mkForce {
-	    enable = true;
-	    themeFile = "tokyo_night_moon";
-      settings = {
-      confirm_os_window_close = 0;
-      dynamic_background_opacity = true;
-      background_opacity = 0.5;
-      background_blur = 5;
-    };
-	};
+  programs.kitty = lib.mkForce {
+    enable = true;
+    settings = {
+    confirm_os_window_close = 0;
+    background_opacity = 0.6;
+    background_blur = 5;
+        };
+    	};
 programs.direnv = {
 		enable = true;
 		enableBashIntegration = true;
