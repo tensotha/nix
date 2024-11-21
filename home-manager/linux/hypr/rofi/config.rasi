@@ -1,0 +1,19 @@
+configuration {
+    modi:                       "drun,run";
+    font:                       "neuropolitical 10";
+    show-icons:                 true;
+    icon-theme:                 "kora";
+    display-drun:               "APPS";
+    display-run:                "RUN";
+    display-filebrowser:        "FILES";
+    display-window:             "WINDOW";
+	drun-display-format:        "{name}";
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+    window-format:              "{w} · {c} · {t}";
+    
+}
+
+@import ~/.cache/wal/colors-rofi-pywal
+@import ~/.cache/current_wallpaper.rasi
