@@ -3,7 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
  
 
 {
@@ -55,6 +55,29 @@ fonts.packages = with pkgs; [
     jack.enable = true;
   };
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --time-format '%a, %d %b %Y • %T' --greeting  '[Become \n          Visible]' --asterisks --remember --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+ 
+#services.greetd = {
+#    enable = true;
+#    settings = {
+#    default_session = {
+#      command = "${lib.getExe config.programs.hyprland.package}";
+#      user = "tensotha";
+#    };
+#    initial_session = {
+#      command = "${lib.getExe config.programs.hyprland.package} --config /path/to/greetd/hyprland.conf";
+#      user = "greeter";
+#    };
+#  };
+#   };
 
   users.users.tensotha = {
   isNormalUser = true;
