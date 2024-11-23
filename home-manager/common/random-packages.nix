@@ -61,7 +61,9 @@ programs.yazi = {
     neofetch
     vesktop
     # archives
+    dolphin
     zip
+    udiskie
     xz
     unzip
     p7zip

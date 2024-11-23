@@ -3,7 +3,7 @@
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
 
-{ config, pkgs, lib, ... }:
+{ config, pkgs,  ... }:
  
 
 {
@@ -45,6 +45,16 @@ fonts.packages = with pkgs; [
     dates = "daily";
     options = "--delete-older-than 1d";
   };
+
+  services.udisks2.enable = true;
+    services.syncthing = {
+  enable = true;
+  openDefaultPorts = true;
+  settings.gui = {
+    user = "admin";
+    password = "admin";
+  };
+};
   services.flatpak.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -90,7 +100,6 @@ hardware = {
     nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
     nvidia.modesetting.enable = true;
 };
-
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
