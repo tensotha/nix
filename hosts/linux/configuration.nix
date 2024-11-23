@@ -138,6 +138,7 @@ hardware = {
     pkgs.bluetuith
     pkgs.python3
     pkgs.gcc
+    pkgs.qmk
     pkgs.caprine
     pkgs.anki-bin
     pkgs.stremio
