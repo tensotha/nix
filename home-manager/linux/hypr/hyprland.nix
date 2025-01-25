@@ -4,6 +4,7 @@
     dunst
     rofi-wayland
     pywal
+    hyprutils
     waypaper
     wl-clipboard
     cliphist

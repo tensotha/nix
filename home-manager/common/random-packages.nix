@@ -58,6 +58,8 @@ programs.yazi = {
     # feel free to add your own or remove some of them
     bat
     fzf
+    ticktick
+    obsidian
     neofetch
     vesktop
     # archives

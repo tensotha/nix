@@ -11,7 +11,7 @@ fonts.packages = with pkgs; [
       jetbrains-mono
       fira-code
       fira-code-symbols
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    # (nerdfonts.override { fonts = [ "FiraCode" ]; })
 
 ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
