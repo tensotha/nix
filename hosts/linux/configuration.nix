@@ -8,12 +8,13 @@
 
 {
 fonts.packages = with pkgs; [
-      jetbrains-mono
-      fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
       fira-code-symbols
     # (nerdfonts.override { fonts = [ "FiraCode" ]; })
 
 ];
+  fonts.fontDir.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
   imports =

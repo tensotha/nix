@@ -58,6 +58,7 @@ programs.yazi = {
     # feel free to add your own or remove some of them
     bat
     fzf
+    firefox
     ticktick
     obsidian
     neofetch
@@ -103,6 +104,9 @@ programs.yazi = {
     # it provides the command `nom` works just like `nix`
     # with more details log output
     nix-output-monitor
+
+
+    font-manager
 
     # productivity
     hugo # static site generator
