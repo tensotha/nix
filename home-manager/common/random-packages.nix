@@ -49,19 +49,21 @@ programs.yazi = {
 		enable = true;
 		enableBashIntegration = true;
 
-	};
+	}; 
   programs.k9s = {
 		enable = true;
 	};
  home.packages = with pkgs; [
     # here is some command line tools I use frequently
     # feel free to add your own or remove some of them
+    showmethekey
     bat
     fzf
     firefox
     ticktick
     obsidian
     neofetch
+    killall
     vesktop
     # archives
     dolphin
