@@ -59,6 +59,7 @@ programs.yazi = {
     showmethekey
     bat
     fzf
+    xh
     firefox
     ticktick
     obsidian
