@@ -95,6 +95,12 @@ fonts.packages = with pkgs; [
   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
 
+  virtualisation.containers.enable = true;
+  virtualisation.podman = {
+      enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+      dockerCompat = true;
+};
 
 hardware = {
     graphics.enable = true;

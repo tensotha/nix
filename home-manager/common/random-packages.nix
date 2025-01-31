@@ -10,7 +10,6 @@ if command -v tmux>/dev/null; then
  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
 fi
 
-
 		'';
 	          shellAliases = {
           	ne = "nix-env";
