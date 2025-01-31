@@ -9,6 +9,11 @@ fi
 if command -v tmux>/dev/null; then
  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
 fi
+if command -v fzf-share >/dev/null; then
+  source "$(fzf-share)/key-bindings.bash"
+  source "$(fzf-share)/completion.bash"
+fi
+export PATH="/home/tensotha/.local/bin:$PATH"
 
 		'';
 	          shellAliases = {
@@ -59,6 +64,8 @@ programs.yazi = {
     bat
     fzf
     xh
+    uv
+    podman-tui
     firefox
     ticktick
     obsidian
